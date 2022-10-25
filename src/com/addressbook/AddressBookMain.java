@@ -1,3 +1,8 @@
+//UC 1-- Ability to create a Contacts in AddressBook with first and last names, address,city, state, zip, phone number andemail...
+//UC 2-- Ability to add a new Contact to Address Book - Use Console to add person details from
+//UC 3-- Ability to edit existing contact person using their name
+//UC 4--Ability to delete a person using person's name
+
 package com.addressbook;
 import java.util.*;
 
@@ -20,8 +25,6 @@ public class AddressBookMain {
             switch (ch){
                 case 1:
 
-                    System.out.print("Enter the Id:");
-                    int id=sc.nextInt();
                     System.out.print("Enter the First Name:");
                     String firstname=sc1.nextLine();
                     System.out.print("Enter the Last Name:");
@@ -38,7 +41,7 @@ public class AddressBookMain {
                     int phoneNumber=sc.nextInt();
                     System.out.print("Enter the Email:");
                     String email=sc1.nextLine();
-                    c.add(new AddressBook(id,firstname,lastName,address,city,state,zip,phoneNumber,email));
+                    c.add(new AddressBook(firstname,lastName,address,city,state,zip,phoneNumber,email));
                     break;
                 case 2:
                     System.out.println("---------------------------------");
@@ -53,13 +56,13 @@ public class AddressBookMain {
 
                 case 3:
                     boolean found=false;  //
-                    System.out.println("Enter Id For search:");
-                     id=sc.nextInt();
+                    System.out.println("Enter name For search:");
+                     firstname=sc.nextLine();
                     System.out.println("---------------------------------");
                     i= c.iterator();//function retrieve each record one by one
                     while(i.hasNext()){
                         AddressBook a=i.next();
-                        if (a.getId() == id){
+                        if (a.getfirstName() == firstname){
                             System.out.println(a);
                             found = true;
                         }
@@ -72,13 +75,13 @@ public class AddressBookMain {
                     break;
                 case 4:
                      found=false;  // Delete the record
-                    System.out.println("Enter Id to Delete Record:");
-                    id=sc.nextInt();
+                    System.out.println("Enter Name to Delete Record:");
+                    firstname=sc.nextLine();
                     System.out.println("---------------------------------");
                     i= c.iterator();//function retrieve each record one by one
                     while(i.hasNext()){
                         AddressBook a=i.next();
-                        if (a.getId() == id){
+                        if (a.getfirstName() == firstname){
                            i.remove();;
                             found = true;
                         }
@@ -94,14 +97,14 @@ public class AddressBookMain {
                     break;
 
                 case 5:
-                    found=false;  // Delete the record
-                    System.out.println("Enter Id to Uodate Record:");
-                    id=sc.nextInt();
+                    found=false;  // Update the record
+                    System.out.println("Enter Name to Update Record:");
+                     firstname=sc1.nextLine();
                     System.out.println("---------------------------------");
                    ListIterator<AddressBook>li= c.listIterator();//fInitialize collection to list iterator
                     while(li.hasNext()){
                         AddressBook a=li.next();
-                        if (a.getId() == id){
+                        if (a.getfirstName() == firstname){
                             System.out.print("Enter the New First Name:");
                              firstname=sc1.nextLine();
                             System.out.print("Enter the New Last Name:");
@@ -118,7 +121,7 @@ public class AddressBookMain {
                              phoneNumber=sc.nextInt();
                             System.out.print("Enter the New Email:");
                              email=sc1.nextLine();
-                            li.set(new AddressBook(id,firstname,lastName, address, city,  state, zip, phoneNumber, email));
+                            li.set(new AddressBook(firstname,lastName, address, city,  state, zip, phoneNumber, email));
                             found = true;
                         }
                     }
