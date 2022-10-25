@@ -1,12 +1,9 @@
 package com.addressbook;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class AddressBookMain {
     public static void main(String[] args) {
-        Collection<AddressBook> c=new ArrayList<AddressBook>(); //Collection of data inside this
+        List<AddressBook> c=new ArrayList<AddressBook>(); //Collection of data inside this//Acees functinality of list iterator
         Scanner sc=new Scanner(System.in); //For taking input as a string
         Scanner sc1=new Scanner(System.in); //For taking input as a integer
         int ch ; //choice variable
@@ -74,7 +71,7 @@ public class AddressBookMain {
                     System.out.println("---------------------------------");
                     break;
                 case 4:
-                     found=false;  //
+                     found=false;  // Delete the record
                     System.out.println("Enter Id to Delete Record:");
                     id=sc.nextInt();
                     System.out.println("---------------------------------");
@@ -96,7 +93,46 @@ public class AddressBookMain {
                     System.out.println("---------------------------------");
                     break;
 
-
+                case 5:
+                    found=false;  // Delete the record
+                    System.out.println("Enter Id to Uodate Record:");
+                    id=sc.nextInt();
+                    System.out.println("---------------------------------");
+                   ListIterator<AddressBook>li= c.listIterator();//fInitialize collection to list iterator
+                    while(li.hasNext()){
+                        AddressBook a=li.next();
+                        if (a.getId() == id){
+                            System.out.print("Enter the Id:");
+                             id=sc.nextInt();
+                            System.out.print("Enter the First Name:");
+                             firstname=sc1.nextLine();
+                            System.out.print("Enter the Last Name:");
+                             lastName=sc1.nextLine();
+                            System.out.print("Enter the Address:");
+                             address=sc1.nextLine();
+                            System.out.print("Enter the City:");
+                             city=sc1.nextLine();
+                            System.out.print("Enter the State:");
+                             state=sc1.nextLine();
+                            System.out.print("Enter the Zip:");
+                             zip=sc.nextInt();
+                            System.out.print("Enter the PhoneNumber:");
+                             phoneNumber=sc.nextInt();
+                            System.out.print("Enter the Email:");
+                             email=sc1.nextLine();
+                            li.set(new AddressBook(id,firstname,lastName, address, city,  state, zip, phoneNumber, email));
+                            found = true;
+                        }
+                    }
+                    System.out.println("---------------------------------");
+                    if (!found){
+                        System.out.println("Record not found");
+                    }
+                    else {
+                        System.out.println("Record Updated SucessFully:");
+                    }
+                    System.out.println("---------------------------------");
+                    break;
             }
         }while(ch!=0);
     }

@@ -13,6 +13,7 @@ public class AddressBook {
     private String email;
 
     AddressBook(int id,String firstname,String lastName,String address,String city, String state,int zip,int phoneNumber,String email){//Declaring instance variable using constructor
+        this.id=id;
         this.firstname=firstname;// initialize instance variable
         this.lastName=lastName;
         this.address=address;
