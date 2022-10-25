@@ -102,23 +102,21 @@ public class AddressBookMain {
                     while(li.hasNext()){
                         AddressBook a=li.next();
                         if (a.getId() == id){
-                            System.out.print("Enter the Id:");
-                             id=sc.nextInt();
-                            System.out.print("Enter the First Name:");
+                            System.out.print("Enter the New First Name:");
                              firstname=sc1.nextLine();
-                            System.out.print("Enter the Last Name:");
+                            System.out.print("Enter the New Last Name:");
                              lastName=sc1.nextLine();
-                            System.out.print("Enter the Address:");
+                            System.out.print("Enter the New Address:");
                              address=sc1.nextLine();
-                            System.out.print("Enter the City:");
+                            System.out.print("Enter the New City:");
                              city=sc1.nextLine();
-                            System.out.print("Enter the State:");
+                            System.out.print("Enter the New State:");
                              state=sc1.nextLine();
-                            System.out.print("Enter the Zip:");
+                            System.out.print("Enter the New Zip:");
                              zip=sc.nextInt();
-                            System.out.print("Enter the PhoneNumber:");
+                            System.out.print("Enter the New PhoneNumber:");
                              phoneNumber=sc.nextInt();
-                            System.out.print("Enter the Email:");
+                            System.out.print("Enter the New Email:");
                              email=sc1.nextLine();
                             li.set(new AddressBook(id,firstname,lastName, address, city,  state, zip, phoneNumber, email));
                             found = true;
