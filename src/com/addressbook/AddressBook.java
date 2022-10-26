@@ -6,7 +6,7 @@
 package com.addressbook;
 public class AddressBook {
 
-    private String firstname;
+    private String firstName;
     private String lastName;
     private String address;
     private String city;
@@ -15,58 +15,67 @@ public class AddressBook {
     private int phoneNumber;
     private String email;
 
-    AddressBook(String firstname,String lastName,String address,String city, String state,int zip,int phoneNumber,String email){//Declaring instance variable using constructor
+    AddressBook(String firstName, String lastName, String address, String city, String state, int zip, int phoneNumber, String email) {//Declaring instance variable using constructor
 
-        this.firstname=firstname;// initialize instance variable
-        this.lastName=lastName;
-        this.address=address;
-        this.city=city;
-        this.state=state;
-        this.zip=zip;
-        this.phoneNumber=phoneNumber;
-        this.email=email;
+        this.firstName = firstName;// initialize instance variable
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
 
-    public String getfirstName(){   // For accessing the private variables
-        return firstname;
+    // For accessing the private variables
+
+    public String getFirstName() {
+        return firstName;
 
     }
-    public String getlastName(){
+
+    public String getlastName() {
         return lastName;
 
     }
 
-    public String getAddress(){
+    public String getAddress() {
         return address;
 
     }
-    public String getcity(){
+
+    public String getcity() {
         return city;
 
     }
-    public String getState(){
+
+    public String getState() {
         return state;
 
     }
-    public int getZip(){
+
+    public int getZip() {
         return zip;
 
     }
-    public int getPhoneNumber(){
+
+    public int getPhoneNumber() {
         return phoneNumber;
 
     }
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
 
     }
 
-@Override
-    public String toString(){// Override method
-        return " First Name: "+firstname+" Last Name: "+lastName+" Address: "  +address+" City: " +city+" State: " +state+" Zip: "+zip+" Phone Number: "+phoneNumber+" Email:"+email;
+    @Override
+    public String toString() {// Override method
+        return " First Name: " + firstName + " Last Name: " + lastName + " Address: " + address + " City: " + city + " State: " + state + " Zip: " + zip + " Phone Number: " + phoneNumber + " Email:" + email;
 
-}
+    }
+
 
 }
 
