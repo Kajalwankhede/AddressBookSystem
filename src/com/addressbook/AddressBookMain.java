@@ -72,6 +72,28 @@ public class AddressBookMain {
                     }
                     System.out.println("---------------------------------");
                     break;
+                case 4:
+                    found=false;  // Delete the record
+                    System.out.println("Enter Name to Delete Record:");
+                    firstname=sc.nextLine();
+                    System.out.println("---------------------------------");
+                    i= c.iterator();//function retrieve each record one by one
+                    while(i.hasNext()){
+                        AddressBook a=i.next();
+                        if (a.getfirstName() == firstname){
+                            i.remove();;
+                            found = true;
+                        }
+                    }
+                    System.out.println("---------------------------------");
+                    if (!found){
+                        System.out.println("Record not found");
+                    }
+                    else {
+                        System.out.println("Record Delete SucessFully:");
+                    }
+                    System.out.println("---------------------------------");
+                    break;
             }
         }while(ch!=0);
     }
