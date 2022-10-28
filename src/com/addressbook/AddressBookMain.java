@@ -94,6 +94,49 @@ public class AddressBookMain {
                     }
                     System.out.println("---------------------------------");
                     break;
+
+
+
+                case 5:
+                    found=false;  // Update the record
+                    System.out.println("Enter Name to Update Record:");
+                    firstname=sc1.nextLine();
+                    System.out.println("---------------------------------");
+                    ListIterator<AddressBook>li= c.listIterator();//fInitialize collection to list iterator
+                    while(li.hasNext()){
+                        AddressBook a=li.next();
+                        if (a.getfirstName() == firstname){
+                            System.out.print("Enter the New First Name:");
+                            firstname=sc1.nextLine();
+                            System.out.print("Enter the New Last Name:");
+                            lastName=sc1.nextLine();
+                            System.out.print("Enter the New Address:");
+                            address=sc1.nextLine();
+                            System.out.print("Enter the New City:");
+                            city=sc1.nextLine();
+                            System.out.print("Enter the New State:");
+                            state=sc1.nextLine();
+                            System.out.print("Enter the New Zip:");
+                            zip=sc.nextInt();
+                            System.out.print("Enter the New PhoneNumber:");
+                            phoneNumber=sc.nextInt();
+                            System.out.print("Enter the New Email:");
+                            email=sc1.nextLine();
+                            li.set(new AddressBook(firstname,lastName, address, city,  state, zip, phoneNumber, email));
+                            found = true;
+                        }
+                    }
+                    System.out.println("---------------------------------");
+                    if (!found){
+                        System.out.println("Record not found");
+                    }
+                    else {
+                        System.out.println("Record Updated SucessFully:");
+                    }
+                    System.out.println("---------------------------------");
+                    break;
+
+
             }
         }while(ch!=0);
     }
