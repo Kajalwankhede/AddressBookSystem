@@ -97,7 +97,6 @@ public class AddressBookMain {
                     }
                     System.out.println("---------------------------------");
                     break;
-
                 case 5:
                     found=false;  // Update the record
                     System.out.println("Enter Name to Update Record:");
