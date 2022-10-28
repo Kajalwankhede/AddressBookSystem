@@ -5,7 +5,6 @@
 
 package com.addressbook;
 import java.util.*;
-
 public class AddressBookMain {
     public static void main(String[] args) {
         List<AddressBook> c=new ArrayList<AddressBook>(); //Collection of data inside this//Acees functinality of list iterator
