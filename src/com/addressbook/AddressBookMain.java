@@ -14,7 +14,7 @@ public class AddressBookMain {
         int ch ; //choice variable
         do {
 
-            System.out.println("**** WELCOME TO ADDRESSBOOK PROGRAM ****");
+            System.out.println("********* WELCOME TO ADDRESSBOOK PROGRAM ****");
             System.out.println("1.ADD");
             System.out.println("2.DISPLAY");
             System.out.println("3.SEARCH");
