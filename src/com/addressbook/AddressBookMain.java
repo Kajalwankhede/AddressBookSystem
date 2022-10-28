@@ -43,16 +43,7 @@ public class AddressBookMain {
                     String email=sc1.nextLine();
                     c.add(new AddressBook(firstname,lastName,address,city,state,zip,phoneNumber,email));
                     break;
-                case 2:
-                    System.out.println("---------------------------------");
-                    Iterator<AddressBook> i= c.iterator();//function retrieve each record one by one
-                    while(i.hasNext()){
-                        AddressBook a=i.next();
-                        System.out.println(a);
 
-                    }
-                    System.out.println("---------------------------------");
-                    break;
             }
         }while(ch!=0);
     }
