@@ -53,6 +53,25 @@ public class AddressBookMain {
                     }
                     System.out.println("---------------------------------");
                     break;
+                case 3:
+                    boolean found=false;  //
+                    System.out.println("Enter name For search:");
+                    firstname=sc.nextLine();
+                    System.out.println("---------------------------------");
+                    i= c.iterator();//function retrieve each record one by one
+                    while(i.hasNext()){
+                        AddressBook a=i.next();
+                        if (a.getfirstName() == firstname){
+                            System.out.println(a);
+                            found = true;
+                        }
+                    }
+                    System.out.println("---------------------------------");
+                    if (!found){
+                        System.out.println("Record not found");
+                    }
+                    System.out.println("---------------------------------");
+                    break;
             }
         }while(ch!=0);
     }
